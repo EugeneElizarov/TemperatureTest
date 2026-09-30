@@ -103,20 +103,37 @@ static void timer_init(void)
 }
 int main(void)
 {
-    int16_t q4; int32_t scaled,whole,frac; char line[40];
-    clock_init();gpio_init();uart_init();i2c_init();timer_init();
-    __enable_irq();
-    for(;;){
-        if(sample_due){
-            sample_due=0U;
-            if(sensor_read(&q4)){
-                scaled=(int32_t)q4*625; whole=scaled/10000; frac=scaled%10000;
-                if(frac<0)frac=-frac;
-                (void)snprintf(line,sizeof(line),"T=%+ld.%04ld C\r\n",(long)whole,(long)frac);
-                uart_write(line);
-            }else uart_write("ERR=I2C\r\n");
-        }
-        //cpu_wfi();
-        __wfi();
+  int16_t q4; 
+  int32_t scaled, whole, frac; 
+  char line[40];
+
+  clock_init();
+  gpio_init();
+  uart_init();
+  i2c_init();
+  timer_init();
+
+  __enable_irq();
+
+  for(;;)
+  {
+    if(sample_due)
+    {
+      sample_due = 0U;
+      if(sensor_read(&q4))
+      {
+        scaled = (int32_t)q4 * 625; 
+        whole = scaled / 10000; 
+        frac=scaled % 10000;
+        if(frac < 0)
+          frac = -frac;
+        (void)snprintf(line, sizeof(line), "T = %+ld.%04ld C\r\n", (long)whole, (long)frac);
+        uart_write(line);
+      }
+      else 
+        uart_write("ERR I2C\r\n");
     }
+    //cpu_wfi();
+    __wfi();
+  }
 }
