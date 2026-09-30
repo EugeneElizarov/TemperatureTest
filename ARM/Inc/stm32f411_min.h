@@ -44,5 +44,9 @@
 #define TIM_ARR REG32(TIM2_BASE+0x2C)
 #define NVIC_ISER0 REG32(0xE000E100UL)
 #define FLASH_ACR REG32(0x40023C00UL)
-static inline void cpu_wfi(void){__asm volatile("wfi");}
+//static inline void cpu_wfi(void)
+//{
+//  /*__asm volatile("wfi");*/
+//  __wfi();
+//}
 #endif

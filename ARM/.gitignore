@@ -2,3 +2,4 @@ Objects/
 Listings/
 *.uvoptx
 *.uvguix.*
+*.dbgconf

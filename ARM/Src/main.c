@@ -116,6 +116,7 @@ int main(void)
                 uart_write(line);
             }else uart_write("ERR=I2C\r\n");
         }
-        cpu_wfi();
+        //cpu_wfi();
+        __wfi();
     }
 }
