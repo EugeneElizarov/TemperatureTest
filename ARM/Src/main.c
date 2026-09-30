@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#define SENSOR_SELECT 1
+#define SENSOR_SELECT 2
 #if SENSOR_SELECT == 1
 #define SENSOR_ADDR 0x48U
 #define SCL_PIN 6U
