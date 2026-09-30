@@ -21,9 +21,9 @@
           <Cpu>IRAM(0x20000000,0x00020000) IROM(0x08000000,0x00080000) CPUTYPE("Cortex-M4") FPU2</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
-          <FlashDriverDll></FlashDriverDll>
-          <DeviceId></DeviceId>
-          <RegisterFile></RegisterFile>
+          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F4xx_512 -FS08000000 -FL080000 -FP0($Device:STM32F411CEUx$CMSIS\Flash\STM32F4xx_512.FLM))</FlashDriverDll>
+          <DeviceId>0</DeviceId>
+          <RegisterFile>$Device:STM32F411CEUx$Device\Include\stm32f4xx.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -46,7 +46,7 @@
             <ExitCodeStop>0</ExitCodeStop>
             <ButtonStop>0</ButtonStop>
             <NotGenerated>0</NotGenerated>
-            <InvalidFlash>1</InvalidFlash>
+            <InvalidFlash>0</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>Objects\</OutputDirectory>
           <OutputName>TemperatureTest</OutputName>
