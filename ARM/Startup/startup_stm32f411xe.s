@@ -2,6 +2,7 @@
                 THUMB
                 AREA    RESET, DATA, READONLY
                 EXPORT  __Vectors
+                EXPORT  Reset_Handler
                 IMPORT  TIM2_IRQHandler
 __Vectors       DCD     0x20020000
                 DCD     Reset_Handler
