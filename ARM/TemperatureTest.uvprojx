@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project xmlns="http://www.keil.com/pack/uvprojx">
+  <Targets>
+    <Target>
+      <TargetName>TemperatureTest</TargetName>
+      <ToolsetNumber>0x4</ToolsetNumber>
+      <ToolsetName>ARM-ADS</ToolsetName>
+      <TargetOption>
+        <TargetCommonOption>
+          <Device>STM32F411CEUx</Device>
+          <Vendor>STMicroelectronics</Vendor>
+          <Cpu>IRAM(0x20000000,0x00020000) IROM(0x08000000,0x00080000) CPUTYPE("Cortex-M4") FPU2</Cpu>
+          <OutputDirectory>Objects\</OutputDirectory>
+          <ListingPath>Listings\</ListingPath>
+          <OutputName>TemperatureTest</OutputName>
+          <CreateExecutable>1</CreateExecutable>
+          <CreateLib>0</CreateLib>
+          <DebugInformation>1</DebugInformation>
+        </TargetCommonOption>
+        <TargetArmAds>
+          <Cads>
+            <Optim>1</Optim>
+            <wLevel>2</wLevel>
+            <VariousControls>
+              <Define></Define>
+              <IncludePath>Inc</IncludePath>
+            </VariousControls>
+          </Cads>
+        </TargetArmAds>
+      </TargetOption>
+      <Groups>
+        <Group>
+          <GroupName>Application</GroupName>
+          <Files>
+            <File><FileName>main.c</FileName><FileType>1</FileType><FilePath>Src\main.c</FilePath></File>
+            <File><FileName>system_stm32f4xx.c</FileName><FileType>1</FileType><FilePath>Src\system_stm32f4xx.c</FilePath></File>
+            <File><FileName>startup_stm32f411xe.s</FileName><FileType>2</FileType><FilePath>Startup\startup_stm32f411xe.s</FilePath></File>
+          </Files>
+        </Group>
+      </Groups>
+    </Target>
+  </Targets>
+</Project>
